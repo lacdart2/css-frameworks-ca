@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulse — Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/output.css" />
+</head>
+
+<body class="flex flex-col min-h-screen  bg-background text-white">
+
+    <!-- page wrapper -->
+    <div class="flex flex-col items-center justify-center px-4  min-h-screen ">
+
+        <!-- card -->
+        <div class="flex flex-col items-start w-full gap-6 p-8 max-w-md bg-surface border border-border">
+            <!-- logo -->
+            <div class="flex flex-col items-start gap-1">
+                <svg width="100" height="60" viewBox="0 0 360 112" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-label="Pulse logo" role="img">
+                    <g stroke="#06b6d4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M70 22C38 22 14 44 14 72c0 12 5 23 13 31l-7 25 29-11c7 3 14 5 22 5 32 0 56-22 56-50S102 22 70 22Z" />
+                        <path d="M35 73h28l10-25 14 47 11-22h24" />
+                        <path d="M116 18c14 5 25 16 30 30" />
+                        <path d="M130 6c18 7 32 21 39 39" />
+                    </g>
+                    <text x="155" y="84" fill="#06b6d4" font-size="64" font-weight="700"
+                        font-family="Inter, Arial, sans-serif">Pulse</text>
+                </svg>
+                <p class="text-sm text-gray-400">Sign in to your account</p>
+            </div>
+            <!-- tabs -->
+            <div class="flex w-full border-b border-border">
+                <button onclick="switchTab('signin')" id="tab-signin"
+                    class="flex-1 py-2 text-sm font-medium text-cyan-500 border-b-2 border-cyan-500 cursor-pointer hover:text-cyan-400 transition-colors">
+                    Sign In
+                </button>
+                <button onclick="switchTab('register')" id="tab-register"
+                    class="flex-1 py-2 text-sm font-medium text-gray-400 cursor-pointer hover:text-white transition-colors">
+                    Register
+                </button>
+            </div>
+
+            <!-- sign in form -->
+            <form id="signin-form" action="./feed/index.html" method="get" class="flex flex-col w-full gap-4">
+                <div class="flex flex-col gap-1">
+                    <label for="signin-email" class="text-xs text-gray-400 uppercase tracking-widest">Email</label>
+                    <input id="signin-email" name="email" type="email" placeholder="you@mail.com" required
+                        class="w-full px-4 py-3 bg-background border border-border text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-cyan-500 transition-colors" />
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label for="signin-password"
+                        class="text-xs text-gray-400 uppercase tracking-widest">Password</label>
+                    <input id="signin-password" name="password" type="password" required minlength="8"
+                        placeholder="Min. 8 characters"
+                        class="w-full px-4 py-3 bg-background border border-border text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-cyan-500 transition-colors" />
+                </div>
+                <button type="submit"
+                    class="w-full py-3 mt-2 bg-cyan-500 text-bg-background text-sm font-bold uppercase tracking-widest cursor-pointer hover:bg-cyan-600 transition-colors">
+                    Sign In
+                </button>
+            </form>
+
+            <!-- register form (hidden initially ) -->
+            <form id="register-form" action="./feed/index.html" method="get" class="hidden flex flex-col w-full gap-4">
+                <div class="flex flex-col gap-1">
+                    <label for="reg-name" class="text-xs text-gray-400 uppercase tracking-widest">Full Name</label>
+                    <input id="reg-name" name="name" type="text" required placeholder="Your name"
+                        class="w-full px-4 py-3 border border-border bg-background text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-cyan-500 transition-colors" />
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label for="reg-email" class="text-xs text-gray-400 uppercase tracking-widest">Email</label>
+                    <input id="reg-email" type="email" name="email" required placeholder="you@mail.com"
+                        class="w-full px-4 py-3 bg-background border border-border text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-cyan-500 transition-colors" />
+                </div>
+
+                <div class="flex flex-col gap-1">
+                    <label for="reg-password" class="text-xs text-gray-400 uppercase tracking-widest">Password</label>
+                    <input id="reg-password" name="password" type="password" required minlength="8"
+                        placeholder="Min. 8 characters"
+                        class="w-full px-4 py-3  border border-border bg-background text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-cyan-500 transition-colors" />
+                </div>
+                <button type="submit"
+                    class="w-full  bg-cyan-500 text-bg-background text-sm font-bold py-3 mt-2 uppercase tracking-widest cursor-pointer hover:bg-cyan-600 transition-colors">
+                    Create Account
+                </button>
+            </form>
+
+            <!-- footer -->
+            <p id="auth-footer" class="text-sm text-gray-400">
+                Don't have an account? <a href="#"
+                    class="text-cyan-500 hover:text-cyan-400 transition-colors">Register</a>
+            </p>
+
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
