@@ -5,9 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pulse — Feed</title>
+    <link rel="icon" href="../images/logo.webp" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/output.css" />
 </head>
 
@@ -44,7 +47,8 @@
         <div class="relative flex items-center gap-4">
             <button id="user-trigger"
                 class="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors  cursor-pointer">
-                <img src="https://i.pravatar.cc/32" alt="avatar" class="w-8 h-8 rounded-full" />
+                <img src="https://i.pravatar.cc/32" alt="avatar"
+                    class="w-8 h-8 min-w-8 min-h-8 rounded-full object-cover" />
                 <span class="hidden md:block">@kaderH</span>
             </button>
 
@@ -57,6 +61,13 @@
                     class="px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-[#222] transition-colors border-t border-border">Logout</a>
             </div>
         </div>
+        <!-- hamburger-menu -->
+        <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 cursor-pointer p-2">
+            <span class="w-6 h-0.5 bg-white block"></span>
+            <span class="w-6 h-0.5 bg-white block"></span>
+            <span class="w-6 h-0.5 bg-white block"></span>
+        </button>
+
     </header>
 
     <!-- main layout -->
@@ -99,13 +110,14 @@
         </aside>
 
         <!-- feed content -->
-        <main id="feed" class="flex flex-col items-start gap-6">
+        <div class="flex flex-col items-start gap-6">
+
             <!-- create a post -->
             <form id="create-post-form" class="flex flex-col w-full gap-3 p-4 bg-surface border border-border">
                 <div class="flex items-start gap-3">
                     <img src="https://i.pravatar.cc/36" alt="avatar" class="w-9 h-9 rounded-full shrink-0" />
                     <textarea id="post-content" name="post" required placeholder="What's on your mind?" rows="2"
-                        class="w-full px-3 py-2 bg-background border border-border text-white  text-sm placeholder:text-gray-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"></textarea>
+                        class="w-full px-3 py-2 bg-background border border-border text-white text-sm placeholder:text-gray-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"></textarea>
                 </div>
                 <div class="flex items-center justify-end">
                     <button type="submit"
@@ -120,13 +132,15 @@
                 <button data-sort="latest"
                     class="px-4 py-1.5 text-xs font-medium text-background bg-cyan-500 cursor-pointer hover:bg-cyan-600 transition-colors">Latest</button>
                 <button data-sort="popular"
-                    class="px-4 py-1.5 text-xs font-medium text-gray-400 border  border-border cursor-pointer hover:border-cyan-500 hover:text-white transition-colors">Popular</button>
+                    class="px-4 py-1.5 text-xs font-medium text-gray-400 border border-border cursor-pointer hover:border-cyan-500 hover:text-white transition-colors">Popular</button>
                 <button data-sort="following"
-                    class="px-4 py-1.5 text-xs font-medium text-gray-400 border border-border cursor-pointer hover:border-cyan-500  hover:text-white transition-colors">Following</button>
+                    class="px-4 py-1.5 text-xs font-medium text-gray-400 border border-border cursor-pointer hover:border-cyan-500 hover:text-white transition-colors">Following</button>
             </div>
 
-        </main>
+            <!-- posts container -->
+            <main id="feed" class="flex flex-col items-start gap-6 w-full"></main>
 
+        </div>
         <!-- sidebar right -->
         <aside class="hidden md:flex flex-col items-start gap-6">
             <!-- suggested users -->
@@ -142,7 +156,7 @@
                             </div>
                         </div>
                         <button
-                            class="px-3 py-1 text-xs text-cyan-500 border border-cyan-500 cursor-pointer hover:bg-cyan-500 hover:text-background transition-colors">Follow</button>
+                            class=" follow-btn px-3 py-1 text-xs text-cyan-500 border border-cyan-500 cursor-pointer hover:bg-cyan-500 hover:text-background transition-colors">Follow</button>
                     </div>
                     <div class="flex items-center justify-between gap-2">
                         <div class="flex items-center gap-2">
@@ -153,7 +167,7 @@
                             </div>
                         </div>
                         <button
-                            class="px-3 py-1 text-xs text-cyan-500 border border-cyan-500 cursor-pointer hover:bg-cyan-500 hover:text-background transition-colors">Follow</button>
+                            class="follow-btn px-3 py-1 text-xs text-cyan-500 border border-cyan-500 cursor-pointer hover:bg-cyan-500 hover:text-background transition-colors">Follow</button>
                     </div>
                     <div class="flex items-center justify-between gap-2">
                         <div class="flex items-center gap-2">
@@ -164,7 +178,7 @@
                             </div>
                         </div>
                         <button
-                            class="px-3 py-1 text-xs text-cyan-500 border border-cyan-500 cursor-pointer hover:bg-cyan-500 hover:text-[#0f0f0f] transition-colors">Follow</button>
+                            class="follow-btn px-3 py-1 text-xs text-cyan-500 border border-cyan-500 cursor-pointer hover:bg-cyan-500 hover:text-[#0f0f0f] transition-colors">Follow</button>
                     </div>
                 </div>
             </div>

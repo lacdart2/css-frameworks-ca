@@ -5,9 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pulse — Profile</title>
+    <link rel="icon" href="../images/logo.webp" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/output.css" />
 </head>
 
@@ -46,7 +49,8 @@
         <div class="relative flex items-center gap-4">
             <button id="user-trigger"
                 class="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer">
-                <img src="https://i.pravatar.cc/32" alt="avatar" class="w-8 h-8 rounded-full" />
+                <img src="https://i.pravatar.cc/32" alt="avatar"
+                    class="w-8 h-8 min-w-8 min-h-8 rounded-full object-cover" />
                 <span class="hidden md:block">@kaderH</span>
             </button>
 
@@ -59,6 +63,12 @@
                     class="px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-[#222] transition-colors border-t border-border">Logout</a>
             </div>
         </div>
+        <!-- hamburger-menu -->
+        <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 cursor-pointer p-2">
+            <span class="w-6 h-0.5 bg-white block"></span>
+            <span class="w-6 h-0.5 bg-white block"></span>
+            <span class="w-6 h-0.5 bg-white block"></span>
+        </button>
     </header>
 
     <!-- main layout -->
@@ -78,10 +88,10 @@
                 <!-- avatar - actions -->
                 <div class="flex items-start justify-between px-6 -mt-10">
                     <img src="https://i.pravatar.cc/80" alt="profile avatar"
-                        class="w-20 h-20 shrink-0 rounded-full border-4 border-surface" />
+                        class="w-20 h-20 shrink-0 rounded-full border-4 border-[#1a1a1a]" />
                     <div class="flex items-center gap-2 mt-12">
                         <button
-                            class="px-4 py-2 text-xs font-medium text-cyan-500 border border-cyan-500 cursor-pointer hover:bg-cyan-500 hover:text-background transition-colors">
+                            class="follow-btn px-4 py-2 text-xs font-medium text-cyan-500 border border-cyan-500 cursor-pointer hover:bg-cyan-500 hover:text-background transition-colors">
                             Follow
                         </button>
                         <button
@@ -93,24 +103,23 @@
 
                 <!-- user info - stats -->
                 <div class="flex flex-col gap-1 px-6 pt-3 pb-6">
-                    <h1 class="text-lg font-bold text-white font-display">Sarah Johnson</h1>
-                    <span class="text-sm text-cyan-500">@sarahj</span>
-                    <p class="text-sm text-gray-400 mt-1 leading-relaxed">Frontend developer · Design systems · Open
-                        source
-                        contributor. Building things that matter.</p>
+                    <h1 class="text-lg font-bold text-white font-display">Lakhdar Hafsi</h1>
+                    <span class="text-sm text-cyan-500">@kaderH</span>
+                    <p class="text-sm text-gray-400 mt-1 leading-relaxed">Frontend developer · Noroff AUG24FT · Building
+                        cool things.</p>
 
                     <div class="flex items-center gap-6 pt-4 border-t border-border mt-4">
                         <div class="flex flex-col items-center gap-0.5">
-                            <span class="text-lg font-bold text-white">248</span>
-                            <span class="text-xs text-gray-400 uppercase tracking-widest">Posts</span>
+                            <span class="text-lg font-bold text-white font-display">248</span>
+                            <span class="text-xs text-gray-400 uppercase ">Posts</span>
                         </div>
                         <div class="flex flex-col items-center gap-0.5">
-                            <span class="text-lg font-bold text-white">14.2k</span>
-                            <span class="text-xs text-gray-400 uppercase tracking-widest">Followers</span>
+                            <span class="text-lg font-bold text-white font-display">14.2k</span>
+                            <span class="text-xs text-gray-400 uppercase ">Followers</span>
                         </div>
                         <div class="flex flex-col items-center gap-0.5">
-                            <span class="text-lg font-bold text-white">381</span>
-                            <span class="text-xs text-gray-400 uppercase tracking-widest">Following</span>
+                            <span class="text-lg font-bold text-white font-display">381</span>
+                            <span class="text-xs text-gray-400 uppercase ">Following</span>
                         </div>
                     </div>
                 </div>
@@ -118,14 +127,14 @@
             </div>
             <!-- user posts -->
             <div class="flex flex-col w-full gap-4">
-                <h2 class="text-xs text-gray-400 uppercase tracking-widest">Posts</h2>
+                <h2 class="text-xs text-gray-400 uppercase tracking-widest font-display">Posts</h2>
                 <article
                     class="flex flex-col w-full gap-4 p-4 bg-surface border border-border hover:border-cyan-500 transition-colors">
                     <div class="flex items-center gap-3">
                         <img src="https://i.pravatar.cc/40" alt="avatar" class="w-10 h-10 rounded-full" />
                         <div class="flex flex-col gap-0.5">
-                            <span class="text-sm font-medium text-white">Sarah Johnson</span>
-                            <span class="text-xs text-gray-400">@sarahj · 2h ago</span>
+                            <span class="text-sm font-medium text-white">Lakhdar Hafsi</span>
+                            <span class="text-xs text-gray-400">@kaderH · 2h ago</span>
                         </div>
                     </div>
                     <p class="text-sm text-gray-300 leading-relaxed">Just shipped a new feature for our design system.
@@ -134,7 +143,7 @@
                     <img src="https://picsum.photos/seed/post1/600/300" alt="post image"
                         class="w-full h-64 object-cover" />
                     <div class="flex items-center gap-6 pt-2 border-t border-border">
-                        <button
+                        <button onclick="likePost(this)"
                             class="flex items-center gap-2 text-xs text-gray-400 cursor-pointer hover:text-cyan-500 transition-colors">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path
@@ -157,16 +166,16 @@
                     <div class="flex items-center gap-3">
                         <img src="https://i.pravatar.cc/40" alt="avatar" class="w-10 h-10 rounded-full" />
                         <div class="flex flex-col gap-0.5">
-                            <span class="text-sm font-medium text-white">Sarah Johnson</span>
-                            <span class="text-xs text-gray-400">@sarahj · 3d ago</span>
+                            <span class="text-sm font-medium text-white">Lakhdar Hafsi</span>
+                            <span class="text-xs text-gray-400">@kaderH · 3d ago</span>
                         </div>
                     </div>
                     <p class="text-sm text-gray-300 leading-relaxed">Accessibility is not an afterthought. Built proper
                         focus states, aria labels, and keyboard navigation into every component this sprint. Users
                         notice.</p>
                     <div class="flex items-center gap-6 pt-2 border-t border-border">
-                        <button
-                            class="flex items-center gap-2 text-xs  text-gray-400 cursor-pointer hover:text-cyan-500 transition-colors">
+                        <button onclick="likePost(this)"
+                            class="flex items-center gap-2 text-xs text-gray-400 cursor-pointer hover:text-cyan-500 transition-colors">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -187,11 +196,11 @@
         </div>
 
         <!-- right sidebar -->
-        <aside class="hidden md:flex flex-col items-start gap-6">
+        <aside id="mobile-menu" class="hidden md:flex flex-col items-start gap-6">
 
             <!-- following -->
             <div class="flex flex-col w-full gap-3  p-4 bg-surface border border-border">
-                <h3 class="text-xs text-gray-400 uppercase tracking-widest">Following</h3>
+                <h3 class="text-xs text-gray-400 uppercase tracking-widest font-display">Following</h3>
                 <div class="flex flex-col gap-3">
                     <div class="flex items-center gap-2">
                         <img src="https://i.pravatar.cc/32?img=4" alt="avatar" class="w-8 h-8 rounded-full" />
@@ -219,7 +228,7 @@
 
             <!-- followers -->
             <div class="flex flex-col w-full gap-3 p-4 bg-surface border border-border">
-                <h3 class="text-xs text-gray-400 uppercase  tracking-widest">Followers</h3>
+                <h3 class="text-xs text-gray-400 uppercase  tracking-widest font-display">Followers</h3>
                 <div class="flex flex-col gap-3">
                     <div class="flex items-center gap-2">
                         <img src="https://i.pravatar.cc/32?img=7" alt="avatar" class="w-8 h-8 rounded-full" />

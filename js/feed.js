@@ -2,8 +2,8 @@
 const posts = [
     {
         id: 1,
-        name: 'Sarah Johnson',
-        handle: '@sarahj',
+        name: 'Lakhdar Hafsi',
+        handle: '@kaderH',
         time: '2h ago',
         avatar: 'https://i.pravatar.cc/40?img=1',
         content: 'Just shipped a new feature for our design system. Clean components, consistent spacing, and full dark mode support. Feels good to finally get this out!',
@@ -81,7 +81,7 @@ function createPostCard(post) {
       <div class="flex items-center gap-3">
         <img src="${post.avatar}" alt="${post.name} avatar" class="w-10 h-10 rounded-full" />
         <div class="flex flex-col gap-0.5">
-          <span class="text-sm font-medium text-white">${post.name}</span>
+          <span class="text-sm font-medium text-white font-display">${post.name}</span>
           <span class="text-xs text-gray-400">${post.handle} · ${post.time}</span>
         </div>
       </div>
@@ -115,11 +115,6 @@ function renderPosts(filter = 'latest') {
         : posts.filter(p => p.tag === filter)
 
     feed.innerHTML = filtered.map(createPostCard).join('')
-}
-
-// like toggle for a post
-function likePost(btn) {
-    btn.classList.toggle('text-cyan-500')
 }
 
 // create a new post
