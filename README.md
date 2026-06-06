@@ -2,7 +2,7 @@
 
 A social media UI built with Tailwind CSS v4 as part of the Noroff CSS Frameworks course assignment (AUG24FT).
 
-Live demo: []
+[Live demo: \[\]](https://pulse-social-ca.netlify.app/)
 
 ---
 
