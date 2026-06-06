@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="../css/output.css" />
 </head>
 
-<body class="flex flex-col min-h-screen bg-background text-white">
+<body class="flex flex-col min-h-screen bg-background  text-white">
     <!-- navbar -->
     <header
-        class="sticky top-0 z-30 w-full flex items-center justify-between  px-6 py-4 bg-surface border-b border-border">
+        class="sticky top-0 z-30 w-full flex items-center justify-between bg-surface px-6 py-4   border-b border-border">
         <a href="./index.html">
             <svg width="100" height="36" viewBox="0 0 360 112" fill="none" xmlns="http://www.w3.org/2000/svg"
                 aria-label="Pulse logo" role="img">
@@ -32,9 +32,10 @@
                     font-family="Inter, Arial, sans-serif">Pulse</text>
             </svg>
         </a>
+
         <!-- search bar -->
         <div
-            class="flex items-center gap-2 w-full max-w-sm mx-6  px-4 py-2 bg-background focus-within:border-cyan-500 border border-border transition-colors">
+            class="flex items-center gap-2 w-full  max-w-sm mx-6 px-4 py-2 bg-background focus-within:border-cyan-500 border border-border transition-colors">
             <svg class="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
                 viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="8" />
@@ -43,40 +44,51 @@
             <input type="text" placeholder="Search Pulse..."
                 class="w-full bg-transparent text-white text-sm placeholder:text-gray-600 focus:outline-none" />
         </div>
-        <!-- nav right -->
-        <div class="relative flex items-center gap-4">
+
+        <!-- nav right - desktop -->
+        <div class="relative hidden md:flex items-center  gap-4">
             <button id="user-trigger"
                 class="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors  cursor-pointer">
                 <img src="https://i.pravatar.cc/32" alt="avatar"
                     class="w-8 h-8 min-w-8 min-h-8 rounded-full object-cover" />
-                <span class="hidden md:block">@kaderH</span>
+                <span>@kaderH</span>
             </button>
 
-            <!-- dropdown for user -->
+            <!-- desktop dropdown -->
             <div id="user-dropdown"
-                class="hidden absolute right-0 top-full w-40 mt-2 flex flex-col  bg-surface border border-border z-50">
+                class="hidden absolute right-0 top-full mt-2 flex flex-col w-40 bg-surface border border-border z-50">
                 <a href="../profile/index.html"
-                    class="px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-[#222] transition-colors">Profile</a>
+                    class="px-4 py-3 text-sm text-cyan-500 hover:bg-[#222] transition-colors">Profile</a>
                 <a href="../index.html"
                     class="px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-[#222] transition-colors border-t border-border">Logout</a>
             </div>
         </div>
-        <!-- hamburger-menu -->
-        <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 cursor-pointer p-2">
-            <span class="w-6 h-0.5 bg-white block"></span>
-            <span class="w-6 h-0.5 bg-white block"></span>
-            <span class="w-6 h-0.5 bg-white block"></span>
-        </button>
 
-    </header>
+        <!-- hamburger - mobile -->
+        <div class="relative md:hidden">
+            <button id="menu-toggle" class="flex flex-col gap-1.5 cursor-pointer p-2">
+                <span class="w-6 h-0.5 bg-white block"></span>
+                <span class="w-6 h-0.5 bg-white block"></span>
+                <span class="w-6 h-0.5 bg-white block"></span>
+            </button>
 
-    <!-- main layout -->
-    <div class="flex flex-col md:grid md:grid-cols-[220px_1fr_240px] gap-6 w-full max-w-6xl mx-auto px-4 py-8">
-        <!--  sidebar left -->
-        <aside class="flex flex-col items-start gap-1">
-            <nav class="flex flex-col w-full gap-1">
-                <a href="#"
-                    class="flex items-center gap-3 px-4 py-3 text-sm text-cyan-500 bg-surface border border-border  font-medium">
+            <!-- mobile dropdown -->
+            <div id="mobile-menu"
+                class="hidden absolute right-0 top-full  mt-1 w-56 bg-surface border border-border z-50 flex flex-col">
+
+                <!-- user info -->
+                <div class="flex items-center gap-3 px-4 py-3 border-b border-border">
+                    <img src="https://i.pravatar.cc/32" alt="avatar"
+                        class="w-8 h-8 min-w-8 rounded-full object-cover" />
+                    <div class="flex flex-col">
+                        <span class="text-sm font-medium text-white">Lakhdar Hafsi</span>
+                        <span class="text-xs text-gray-400">@kaderH</span>
+                    </div>
+                </div>
+
+                <!-- nav links -->
+                <a href="./index.html"
+                    class="flex items-center gap-3 px-4 py-3 text-sm text-cyan-500 hover:bg-[#222] transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                         <polyline points="9 22 9 12 15 12 15 22" />
@@ -84,7 +96,7 @@
                     Home
                 </a>
                 <a href="../profile/index.html"
-                    class="flex items-center gap-3 px-4 py-3 text-sm  text-gray-400 hover:text-white  hover:bg-surface transition-colors">
+                    class="flex items-center gap-3 px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-[#222] transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                         <circle cx="12" cy="7" r="4" />
@@ -92,7 +104,7 @@
                     Profile
                 </a>
                 <a href="#"
-                    class="flex items-center gap-3 px-4 py-3 text-sm  text-gray-400 hover:text-white hover:bg-surface transition-colors">
+                    class="flex items-center gap-3 px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-[#222] transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
                         <path d="M13.73 21a2 2 0 0 1-3.46 0" />
@@ -100,7 +112,58 @@
                     Notifications
                 </a>
                 <a href="#"
-                    class="flex items-center gap-3 px-4 py-3 text-sm text-gray-400  hover:text-white hover:bg-surface transition-colors">
+                    class="flex items-center gap-3 px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-[#222] transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    Messages
+                </a>
+                <a href="../index.html"
+                    class="flex items-center gap-3 px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-[#222] transition-colors border-t border-border">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                    Logout
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- main layout -->
+    <div class="flex flex-col w-full md:grid md:grid-cols-[220px_1fr_240px] gap-6  max-w-6xl mx-auto px-4 py-8">
+
+        <!-- sidebar left -->
+        <aside class="hidden md:flex flex-col items-start gap-1">
+            <nav class="flex flex-col w-full gap-1">
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 text-sm text-cyan-500 bg-surface border border-border font-medium">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                    Home
+                </a>
+                <a href="../profile/index.html"
+                    class="flex items-center gap-3 px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-surface transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                    Profile
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-surface transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    </svg>
+                    Notifications
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-surface transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                     </svg>
@@ -111,7 +174,6 @@
 
         <!-- feed content -->
         <div class="flex flex-col items-start gap-6">
-
             <!-- create a post -->
             <form id="create-post-form" class="flex flex-col w-full gap-3 p-4 bg-surface border border-border">
                 <div class="flex items-start gap-3">
@@ -121,7 +183,7 @@
                 </div>
                 <div class="flex items-center justify-end">
                     <button type="submit"
-                        class="px-6 py-2 bg-cyan-500 text-background text-sm font-bold uppercase tracking-widest cursor-pointer hover:bg-cyan-600 transition-colors">
+                        class="px-6 py-2 bg-cyan-500 text-background text-sm  font-bold uppercase tracking-widest cursor-pointer hover:bg-cyan-600 transition-colors">
                         Post
                     </button>
                 </div>
@@ -136,16 +198,17 @@
                 <button data-sort="following"
                     class="px-4 py-1.5 text-xs font-medium text-gray-400 border border-border cursor-pointer hover:border-cyan-500 hover:text-white transition-colors">Following</button>
             </div>
-
             <!-- posts container -->
-            <main id="feed" class="flex flex-col items-start gap-6 w-full"></main>
+            <main id="feed" class="flex flex-col items-start w-full gap-6"></main>
 
         </div>
+
         <!-- sidebar right -->
         <aside class="hidden md:flex flex-col items-start gap-6">
+
             <!-- suggested users -->
-            <div class="flex flex-col w-full gap-3 p-4 bg-surface border  border-border">
-                <h3 class="text-xs text-gray-400 uppercase tracking-widest">Suggested</h3>
+            <div class="flex flex-col w-full gap-3 p-4 bg-surface border border-border">
+                <h3 class="text-xs text-gray-400 uppercase  tracking-widest">Suggested</h3>
                 <div class="flex flex-col gap-3">
                     <div class="flex items-center justify-between gap-2">
                         <div class="flex items-center gap-2">
@@ -156,7 +219,7 @@
                             </div>
                         </div>
                         <button
-                            class=" follow-btn px-3 py-1 text-xs text-cyan-500 border border-cyan-500 cursor-pointer hover:bg-cyan-500 hover:text-background transition-colors">Follow</button>
+                            class="follow-btn px-3 py-1 text-xs text-cyan-500 border border-cyan-500 cursor-pointer hover:bg-cyan-500 hover:text-background transition-colors">Follow</button>
                     </div>
                     <div class="flex items-center justify-between gap-2">
                         <div class="flex items-center gap-2">
@@ -169,7 +232,7 @@
                         <button
                             class="follow-btn px-3 py-1 text-xs text-cyan-500 border border-cyan-500 cursor-pointer hover:bg-cyan-500 hover:text-background transition-colors">Follow</button>
                     </div>
-                    <div class="flex items-center justify-between gap-2">
+                    <div class="flex items-center justify-between  gap-2">
                         <div class="flex items-center gap-2">
                             <img src="https://i.pravatar.cc/32?img=6" alt="avatar" class="w-8 h-8 rounded-full" />
                             <div class="flex flex-col">
@@ -184,7 +247,7 @@
             </div>
 
             <!-- trending tags -->
-            <div class="flex flex-col w-full gap-3 p-4 bg-surface border border-border">
+            <div class="flex flex-col w-full bg-surface gap-3 p-4 border border-border">
                 <h3 class="text-xs text-gray-400 uppercase tracking-widest">Trending</h3>
                 <div class="flex flex-col gap-2">
                     <a href="#"
@@ -215,7 +278,7 @@
     </div>
 
     <!-- footer -->
-    <footer class="flex items-center justify-center w-full px-6 py-4  mt-auto border-t border-border">
+    <footer class="flex items-center justify-center w-full px-6 py-4 mt-auto border-t border-border">
         <div class="flex items-center gap-2">
             <svg width="60" height="20" viewBox="0 0 360 112" fill="none" xmlns="http://www.w3.org/2000/svg"
                 aria-label="Pulse logo" role="img">
@@ -233,6 +296,7 @@
                     target="_blank" class="hover:text-cyan-500 transition-colors">Lakhdar Hafsi</a></p>
         </div>
     </footer>
+
     <script src="../js/main.js"></script>
     <script src="../js/feed.js"></script>
 </body>

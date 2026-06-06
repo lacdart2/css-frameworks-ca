@@ -71,13 +71,12 @@ function setupMobileMenu() {
 
     toggle.addEventListener('click', function (e) {
         e.stopPropagation()
-        const isHidden = menu.classList.contains('hidden')
-        if (isHidden) {
-            menu.classList.remove('hidden')
-            menu.classList.add('flex')
-        } else {
+        menu.classList.toggle('hidden')
+    })
+
+    document.addEventListener('click', function (e) {
+        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
             menu.classList.add('hidden')
-            menu.classList.remove('flex')
         }
     })
 }
