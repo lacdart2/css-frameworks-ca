@@ -63,19 +63,21 @@ npm run build
 
 ## Project structure
 
-├── index.html # auth page
+```
+├── index.html          # auth page
 ├── feed/
-│ └── index.html # feed page
+│   └── index.html      # feed page
 ├── profile/
-│ └── index.html # profile page
+│   └── index.html      # profile page
 ├── css/
-│ └── style.css # tailwind input
+│   └── style.css       # tailwind input
 ├── js/
-│ ├── main.js # shared ui logic
-│ └── feed.js # feed data and rendering
+│   ├── main.js         # shared ui logic
+│   └── feed.js         # feed data and rendering
 ├── images/
-│ └── logo.webp # pulse logo
+│   └── logo.webp       # pulse logo
 └── package.json
+```
 
 ---
 
