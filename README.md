@@ -2,7 +2,7 @@
 
 A social media UI built with Tailwind CSS v4 as part of the Noroff CSS Frameworks course assignment (AUG24FT).
 
-[Live demo: \[\]](https://pulse-social-ca.netlify.app/)
+**Live demo:** https://pulse-social-ca.netlify.app/
 
 ---
 
@@ -76,6 +76,15 @@ npm run build
 ├── images/
 │ └── logo.webp # pulse logo
 └── package.json
+
+---
+
+## Challenges
+
+- **Tailwind CSS v4 syntax** — v4 uses `@import "tailwindcss"` instead of the v3 `@tailwind` directives. Took time to figure out why styles weren't applying after switching from CDN to npm.
+- **Custom colors in v4** — `tailwind.config.js` is ignored in v4. All custom colors must be defined via `@theme` in the CSS file instead.
+- **No framework, no state** — managing UI state (like/follow toggles, post creation, sort filtering) with plain JS required careful DOM manipulation without React or any library.
+- **Mobile menu** — building a fully functional hamburger menu with user info, all nav links and logout in vanilla JS required more work than expected compared to a component-based approach.
 
 ---
 
